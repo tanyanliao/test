@@ -1,9 +1,5 @@
 pipeline {
  agent any
- tools{
-    gradle "gradle"
- }
-
 stages {
     stage('init') {
            steps {
