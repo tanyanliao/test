@@ -1,23 +1,10 @@
 pipeline {
- agent{ 
-     label "java"
- }
-stages {
-    stage('init') {
-           steps {
-            script{
-              def dockerPath = tool 'docker' //全局配置里的docker
-              env.PATH = "${dockerPath}/bin:${env.PATH}" //添加了系统环境变量上
-            }
-           }
-    }
-
-    stage('Build') {
-        steps {
-            script{
-              sh "docker --version"
+    agent { docker 'maven:3.3.3' }
+    stages {
+        stage('build') {
+            steps {
+                sh 'mvn --version'
             }
         }
     }
-  }
 }
