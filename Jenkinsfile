@@ -1,7 +1,6 @@
 pipeline {
- agent any
-tools{
-    gradle "gradle"
+ agent{ 
+     label "java"
  }
 stages {
     stage('init') {
