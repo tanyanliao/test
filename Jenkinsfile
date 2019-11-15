@@ -1,6 +1,6 @@
 pipeline {
     agent {
-        label "java"
+        docker {image 'maven:3-alpine'}
     }
     stages {
         stage('Test') {
