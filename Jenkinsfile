@@ -1,12 +1,16 @@
 pipeline {
-    agent {
-        docker {image 'maven:3-alpine'}
-    }
+    agent any
     stages {
         stage('Test') {
             steps {
-                sh 'echo haha'
+                echo 'haha'
             }
         }
     }
+    post {
+        always {
+            echo ‘I will always say Hello again’
+        }
+    }
 }
+
