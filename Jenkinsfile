@@ -1,6 +1,6 @@
 pipeline {
   agent {
-        label ‘java’
+        label ‘python-2.7’
   }
   stages {
     stage('Build') {
