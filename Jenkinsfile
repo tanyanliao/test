@@ -1,6 +1,6 @@
 pipeline {
   agent {
-        label ‘python-2.7’
+        label 'python-2.7'
   }
   stages {
     stage('Build') {
